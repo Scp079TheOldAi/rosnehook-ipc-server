@@ -6,13 +6,13 @@
  */
 
 #include "ipcb.hpp"
-#include "cathookipc.hpp"
+#include "rosnehookipc.hpp"
 #include <vector>
 #include <string>
 #include <thread>
 #include <chrono>
 
-auto peer = std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("cathook_followbot_server", false, true, true);
+auto peer = std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("rosnehook_followbot_server", false, true, true);
 
 #define ESC_PRINTF(s, ...) printf("\e[" s, __VA_ARGS__)
 #define ESC_CUP(x, y) ESC_PRINTF("%d;%dH", (y), (x))
@@ -52,7 +52,7 @@ void print_status()
     fflush(stdout);
     ESC_CUP(2, 2);
     TEXT_BOLD;
-    printf("cathook IPC server");
+    printf("rosnehook IPC server");
     ESC_CUP(3, 4);
     printf("connected: ");
     TEXT_NORMAL;

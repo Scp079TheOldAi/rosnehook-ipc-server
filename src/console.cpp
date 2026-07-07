@@ -15,7 +15,7 @@
 #include <unistd.h>
 
 #include "ipcb.hpp"
-#include "cathookipc.hpp"
+#include "rosnehookipc.hpp"
 
 #include "json.hpp"
 
@@ -215,7 +215,7 @@ json connect(const json& args)
         throw std::runtime_error("already connected");
 
     peer = std::make_unique<peer_t>(has_key(args, "server") ? args["server"].get<std::string>()
-                                                            : "cathook_followbot_server", false, false, true);
+                                                            : "rosnehook_followbot_server", false, false, true);
     peer->Connect();
 
     return json{};

@@ -6,12 +6,12 @@
  */
 
 #include "ipcb.hpp"
-#include "cathookipc.hpp"
+#include "rosnehookipc.hpp"
 
 int main()
 {
     auto peer =
-        std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("cathook_followbot_server", false, false, true);
+        std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("rosnehook_followbot_server", false, false, true);
     peer->Connect();
     peer->memory->mutex.unlock();
 }

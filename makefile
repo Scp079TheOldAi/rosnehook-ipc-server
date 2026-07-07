@@ -11,7 +11,7 @@ SOURCES = $(shell find $(SRC_DIR) -name "*.cpp" -print)
 SOURCES += $(shell find $(SIMPLE_IPC_DIR) -name "*.cpp" -print)
 DEPENDS = $(SOURCES:.cpp=.d)
 TARGETS=server exec undeadlock exec_all console
-INSTALL_DIR = /opt/cathook/ipc
+INSTALL_DIR = /opt/rosnehook/ipc
 
 SOURCES := $(filter-out $(patsubst %,src/%.cpp,$(TARGETS)),$(SOURCES))
 

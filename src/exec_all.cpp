@@ -6,7 +6,7 @@
  */
 
 #include "ipcb.hpp"
-#include "cathookipc.hpp"
+#include "rosnehookipc.hpp"
 
 #include <string>
 #include <iostream>
@@ -31,7 +31,7 @@ int main(int argc, const char** argv)
     for (int i = 1; i < argc; ++i)
         cmd += std::string(argv[i]) + " ";
 
-    auto peer = std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("cathook_followbot_server", false, false);
+    auto peer = std::make_unique<cat_ipc::Peer<server_data_s, user_data_s>>("rosnehook_followbot_server", false, false);
     peer->Connect();
 
     std::cout << "ALL] " << cmd << std::endl;
